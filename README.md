@@ -5,6 +5,15 @@ Una bola que se mueve con física por un nivell, recoge monedas y se reinicia si
 - **Unity:** 6 LTS (6000.3.x)
 - **Controles:** WASD / flechas
 
+## Uso de IA
+
+En esta práctica he usado IA (Claude, de Anthropic) como apoyo para:
+- Escribir los scripts del juego (`PlayerController`, `Coin`, `KillZone`, `GameManager`, `MainMenu`, `Spinner`).
+- Montar el nivel, el prefab de la moneda y el menú mediante un script de editor (`Assets/Editor/CoinCollectorBuilder.cs`).
+- Redactar esta documentación y configurar Git (`.gitignore`, Git LFS).
+
+Yo he creado el proyecto en Unity, he probado el juego y he revisado el resultado.
+
 ## Capturas
 
 | Menú principal | Nivel 1 |
