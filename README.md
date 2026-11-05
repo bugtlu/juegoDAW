@@ -5,6 +5,16 @@ Una bola que se mueve con física por un nivell, recoge monedas y se reinicia si
 - **Unity:** 6 LTS (6000.3.x)
 - **Controles:** WASD / flechas
 
+## Capturas
+
+| Menú principal | Nivel 1 |
+|---|---|
+| ![Menú principal](Screenshots/menu.png) | ![Nivel 1 con las 8 monedas](Screenshots/nivel.png) |
+
+**Recogiendo monedas** (la Console muestra la puntuación):
+
+![Recogiendo monedas](Screenshots/monedas.png)
+
 ## Estructura
 
 ```
