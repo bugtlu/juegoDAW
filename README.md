@@ -9,7 +9,6 @@ Una bola que se mueve con física por un nivell, recoge monedas y se reinicia si
 
 En esta práctica he usado IA (Claude, de Anthropic) como apoyo para:
 - Escribir los scripts del juego (`PlayerController`, `Coin`, `KillZone`, `GameManager`, `MainMenu`, `Spinner`).
-- Montar el nivel, el prefab de la moneda y el menú mediante un script de editor (`Assets/Editor/CoinCollectorBuilder.cs`).
 - Redactar esta documentación y configurar Git (`.gitignore`, Git LFS).
 
 Yo he creado el proyecto en Unity, he probado el juego y he revisado el resultado.
@@ -162,20 +161,3 @@ git add .
 git commit -m "Nucli del joc: nivell, player, monedes, GameManager, KillZone"
 git push
 ```
-
-Comprueba en GitHub que están `Assets/`, `Packages/` y `ProjectSettings/` (y **no** `Library/` ni `Temp/`).
-
----
-
-## Chuleta para la defensa oral
-
-- **FixedUpdate vs Update:** el input se lee en `Update` (cada frame); la física (`linearVelocity`) se aplica en `FixedUpdate` (paso fijo de física).
-- **Conservar Y:** copiamos `rb.linearVelocity.y` para no anular la gravedad.
-- **Normalize:** en diagonal el vector mide √2; normalizándolo la velocidad es igual en todas direcciones.
-- **Freeze Rotation X/Z:** evita que la esfera ruede; se desliza.
-- **Trigger vs Collision:** `Is Trigger` no choca, solo avisa con `OnTriggerEnter`. Las monedas y la KillZone son triggers.
-- **CompareTag("Player"):** solo reaccionamos al jugador (y es más eficiente que `tag ==`).
-- **Singleton:** `GameManager.Instance` es estático; en `Awake` si ya existe otro se destruye. Así cualquier script accede con `GameManager.Instance.AddScore(1)`.
-- **RestartLevel:** `SceneManager.LoadScene(GetActiveScene().buildIndex)` recarga la escena actual → por eso la escena tiene que estar en Build Settings.
-- **[SerializeField] private:** se ve en el Inspector sin hacer el campo público (encapsulación).
-- **Ampliaciones:** `Spinner` gira con `transform.Rotate` × `Time.deltaTime` y flota con `Mathf.PingPong(Time.time * speed, altura)`.
